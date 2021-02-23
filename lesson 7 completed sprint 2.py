@@ -88,7 +88,7 @@ class MathQuiz:
 
     def check_answer(self):
         try:
-            ans = int(self.AnwerEntry.get())
+            ans = int(self.AnswerEntry.get())
 
             if ans == self.answer:
                 self.feedback.configure(text = "Correct")
@@ -100,7 +100,8 @@ class MathQuiz:
                 self.feedback.configure(text = "Incorrect")
                 self.AnswerEntry.delete(0, END)
                 self.AnswerEntry.focus()
-                slef.next_question()
+                self.next_question()
+                
         except ValueError:
             self.feedback.configure(text = "Enter a number")
             self.AnswerEntry.delete(0, END)
